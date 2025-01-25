@@ -198,10 +198,10 @@ if __name__ == "__main__":
     create_data_yaml()
 
     # Step 5: Train YOLO model
-    train_yolo_model(epochs=1, imgsz=640)
+    #train_yolo_model(epochs=1, imgsz=640)
 
     # Step 6: Evaluate model
-    evaluate_model()
+    #evaluate_model()
 
     # Step 7: Save predictions
     save_predictions()
