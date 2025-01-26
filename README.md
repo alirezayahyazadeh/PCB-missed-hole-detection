@@ -45,8 +45,8 @@ Annotation/
     ├── image1.xml
     ├── image2.xml
     └── ...
-
-##**Setup and Installation**
+###
+## **Setup and Installation**
 Clone the repository:
 
 
@@ -54,13 +54,11 @@ git clone https://github.com/alirezayahyazadeh/PCB-missed-hole-detection
 cd pcb-defect-classification
 Install required dependencies:
 
-bash
-Copy
-Edit
+
 pip install -r requirements.txt
 Ensure the dataset is placed in the correct directory structure as described above.
 
-Workflow
+## **Workflow**
 Dataset Preparation: Converts XML annotations to YOLO format and splits the data into training and validation sets.
 Training: Trains the YOLOv8 model on the processed dataset.
 Evaluation: Validates the trained model on the validation set.
@@ -69,7 +67,7 @@ Scripts Description
 t13.py
 This script handles the entire process from dataset preparation to model training and evaluation.
 
-Key Functions
+## **Key Functions**
 prepare_dataset: Converts VOC XML annotations to YOLO format.
 validate_dataset: Ensures all images have corresponding annotations.
 split_dataset: Splits the data into training and validation sets.
@@ -78,27 +76,23 @@ train_yolo_model: Trains the YOLOv8 model with configurable parameters.
 evaluate_model: Evaluates the trained YOLO model.
 save_predictions: Saves predictions from the trained model.
 How to Run
-bash
-Copy
-Edit
+
 python t13.py
 tn24.py
 This script performs inference on images using the trained YOLOv8 model.
 
-Key Steps
+## **Key Steps##
 Loads the trained model (yolov8n_cls_trained.pt).
 Scans the image directory for inference.
 Outputs predicted classes and probabilities for each image.
 How to Run
-bash
-Copy
-Edit
+
 python tn24.py
 Results
 After training the YOLOv8 model, the following outputs are generated:
 
 Trained Model: Saved as yolov8n_cls_trained.pt.
 Predictions: Stored in the runs/detect directory.
-Contributing
+## **Contributing**
 Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
