@@ -1,32 +1,32 @@
-PCB Defect Classification Using YOLOv8
-This project focuses on classifying defects in printed circuit boards (PCBs) using the YOLOv8 model. It identifies two types of defects: Missing Hole and Open Circuit. The repository provides scripts to preprocess data, train a YOLOv8 model, and make predictions.
+# **PCB Defect Classification Using YOLOv8**  
 
-Table of Contents
-Overview
-Dataset
-Setup and Installation
-Workflow
-Scripts Description
-Results
-Contributing
-License
-Overview
-This project automates the detection and classification of PCB defects using YOLOv8. Key features include:
+This project focuses on classifying defects in printed circuit boards (PCBs) using the YOLOv8 model. It identifies two types of defects: **Missing Hole** and **Open Circuit**. The repository provides scripts to preprocess data, train a YOLOv8 model, and make predictions.  
 
-Data preprocessing and conversion to YOLO-compatible format.
-Training the YOLOv8 model on the processed dataset.
-Evaluating and making predictions on new data.
-Exporting the trained model to ONNX format for broader compatibility.
-Dataset
-The dataset used for this project includes images of PCBs with annotations in XML format (VOC format). The classes are:
+## **Table of Contents**  
+- [Overview](#overview)  
+- [Dataset](#dataset)  
+- [Setup and Installation](#setup-and-installation)  
+- [Workflow](#workflow)  
+- [Scripts Description](#scripts-description)  
+- [Results](#results)  
+- [Contributing](#contributing)  
+- [License](#license)  
 
-Missing Hole
-Open Circuit
-Dataset Structure
-The dataset is organized into the following structure:
+## **Overview**  
+This project automates the detection and classification of PCB defects using YOLOv8. Key features include:  
+- Data preprocessing and conversion to YOLO-compatible format.  
+- Training the YOLOv8 model on the processed dataset.  
+- Evaluating and making predictions on new data.  
+- Exporting the trained model to ONNX format for broader compatibility.  
 
+## **Dataset**  
+The dataset used for this project includes images of PCBs with annotations in XML format (VOC format). The classes are:  
+1. **Missing Hole**  
+2. **Open Circuit**  
 
+### **Dataset Structure**  
 
+```plaintext
 Images/
 ├── Missing_hole/
 │   ├── image1.jpg
@@ -45,52 +45,47 @@ Annotation/
     ├── image1.xml
     ├── image2.xml
     └── ...
-Setup and Installation
+##Setup and Installation
 Clone the repository:
 
-
-git clone (https://github.com/alirezayahyazadeh/PCB-missed-hole-detection)
+git clone https://github.com/alirezayahyazadeh/PCB-missed-hole-detection
 cd pcb-defect-classification
-Install required dependencies:
+##Install required dependencies:
 
 pip install -r requirements.txt
 Ensure the dataset is placed in the correct directory structure as described above.
-
 Workflow
-Dataset Preparation: Converts XML annotations to YOLO format and splits the data into training and validation sets.
-Training: Trains the YOLOv8 model on the processed dataset.
-Evaluation: Validates the trained model on the validation set.
-Inference: Runs inference on unseen images to predict defect classes.
-Scripts Description
+1.	Dataset Preparation: Converts XML annotations to YOLO format and splits the data into training and validation sets.
+2.	Training: Trains the YOLOv8 model on the processed dataset.
+3.	Evaluation: Validates the trained model on the validation set.
+4.	Inference: Runs inference on unseen images to predict defect classes.
+#Scripts Description
 t13.py
 This script handles the entire process from dataset preparation to model training and evaluation.
-
-Key Functions:
-prepare_dataset: Converts VOC XML annotations to YOLO format.
-validate_dataset: Ensures all images have corresponding annotations.
-split_dataset: Splits the data into training and validation sets.
-create_data_yaml: Generates the data.yaml file for YOLO training.
-train_yolo_model: Trains the YOLOv8 model with configurable parameters.
-evaluate_model: Evaluates the trained YOLO model.
-save_predictions: Saves predictions from the trained model.
-How to Run:
+#Key Functions
+•	prepare_dataset: Converts VOC XML annotations to YOLO format.
+•	validate_dataset: Ensures all images have corresponding annotations.
+•	split_dataset: Splits the data into training and validation sets.
+•	create_data_yaml: Generates the data.yaml file for YOLO training.
+•	train_yolo_model: Trains the YOLOv8 model with configurable parameters.
+•	evaluate_model: Evaluates the trained YOLO model.
+•	save_predictions: Saves predictions from the trained model.
+#How to Run
 
 python t13.py
-
+tn24.py
 This script performs inference on images using the trained YOLOv8 model.
-
-Key Steps:
-Loads the trained model (yolov8n_cls_trained.pt).
-Scans the image directory for inference.
-Outputs predicted classes and probabilities for each image.
-How to Run:
+Key Steps
+•	Loads the trained model (yolov8n_cls_trained.pt).
+•	Scans the image directory for inference.
+•	Outputs predicted classes and probabilities for each image.
+How to Run
 
 python tn24.py
-Results
-After training the YOLOv8 model, the following outputs are generated:
-
-Trained Model: Saved as yolov8n_cls_trained.pt.
-Predictions: Stored in the runs/detect directory.
-Contributing
+#Results
+#After training the YOLOv8 model, the following outputs are generated:
+•	Trained Model: Saved as yolov8n_cls_trained.pt.
+•	Predictions: Stored in the runs/detect directory.
+#Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
