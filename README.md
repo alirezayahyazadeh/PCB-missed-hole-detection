@@ -10,7 +10,7 @@ This project focuses on classifying defects in printed circuit boards (PCBs) usi
 - [Scripts Description](#scripts-description)  
 - [Results](#results)  
 - [Contributing](#contributing)  
-- [License](#license)  
+ 
 
 ## **Overview**  
 This project automates the detection and classification of PCB defects using YOLOv8. Key features include:  
