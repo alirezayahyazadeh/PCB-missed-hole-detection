@@ -45,13 +45,19 @@ Annotation/
     ├── image1.xml
     ├── image2.xml
     └── ...
-###
+### 
+
+
+
+
 ## **Setup and Installation**
 Clone the repository:
 
 
 git clone https://github.com/alirezayahyazadeh/PCB-missed-hole-detection
-cd pcb-defect-classification
+
+
+pcb-defect-classification
 Install required dependencies:
 
 
